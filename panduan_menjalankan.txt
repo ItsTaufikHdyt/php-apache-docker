@@ -1,0 +1,20 @@
+Pastikan Anda memiliki folder app dan mysql di direktori yang sama dengan docker-compose.yml. Folder app berisi file PHP Anda, sedangkan folder mysql berisi data MariaDB Anda.
+Anda dapat menjalankan docker-compose up -d untuk memulai layanan.
+Anda dapat mengakses Adminer pada http://localhost:8080.
+
+untuk mengacess php programmnya
+http://localhost:80/
+
+login adminner
+server = db 
+user= myuser
+pass = mypassword
+db  = mydb
+
+server = db 
+user = root
+password = root 
+db = kosongkan
+
+untuk down docker 
+docker-compose down --volume

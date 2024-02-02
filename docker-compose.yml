@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  web:
+    image: php:8.2-apache
+    container_name: php8.2-apache
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/var/www/html/
+    depends_on:
+      - db
+  db:
+    image: mariadb
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    volumes:
+      - ./mysql:/var/lib/mysql
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
